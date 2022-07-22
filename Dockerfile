@@ -1,8 +1,3 @@
-FROM python:3.8
-RUN mkdir /app
-COPY requirements.txt /app
-WORKDIR /app
-RUN pip install -r requirements.txt
-COPY . /app
-
-CMD gunicorn -b 0.0.0.0:8080 -c config.py -e PYTHONBUFFERED=TRUE hello_flask:app --log-file=-
+FROM ubuntu:20.04
+CMD echo "Hello world"
+CMD echo "Hello World from a container running on $(uname -m);"
